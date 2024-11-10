@@ -57,6 +57,7 @@ const App = () => {
           <Route path='send-request' element={<EmpLeaveRequest />} />
           <Route path='view-leave' element={<EmpLeave />} />
           <Route path='emp-cal' element={<EmpCalender />} />
+          {/* <Route path='emp' element={<Fetch />} /> */}
         </Route>
         <Route path="/teamlead" element={<TeamLeadProtected compo={<TeamLayout />} />}>
           <Route index element={<TeamProfile />} />
