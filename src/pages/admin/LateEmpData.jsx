@@ -60,7 +60,9 @@ const LateEmpData = () => {
                 }
             </div>
         </div>
-
+        <div>
+            NEW  Update Implimaent Here
+        </div>
     </>
 }
 export default LateEmpData
