@@ -52,7 +52,6 @@ const EmpCalender = () => {
                                     initialView='dayGridMonth'
                                     weekends={true}
                                     events={events}
-                                // eventContent={RenderEventContent}
                                 />
                             </div>
                         </div>
