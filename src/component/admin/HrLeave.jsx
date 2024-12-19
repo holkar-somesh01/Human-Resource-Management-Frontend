@@ -3,7 +3,7 @@ import { useLazyFetchHRLeaveQuery, useUpdateHrLeaveMutation } from '../../redux/
 import Notify from 'simple-notify'
 import { io } from 'socket.io-client';
 
-const IoServer = io("http://localhost:5000");
+const IoServer = io(import.meta.env.VITE_BACKEND_URL);
 
 const HrLeave = () => {
     const [fetchHRLEAVE, { data, isLoading }] = useLazyFetchHRLeaveQuery()

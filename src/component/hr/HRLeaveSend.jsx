@@ -7,10 +7,9 @@ import Notify from 'simple-notify'
 import { useLazyFetchRequestStatusQuery, useSendLeaveRequestMutation } from '../../redux/apis/hrApi'
 import { io } from 'socket.io-client'
 
-const ioserver = io("http://localhost:5000")
+const ioserver = io(import.meta.env.VITE_BACKEND_URL)
 
 const HRLeaveSend = () => {
-
     const tableRef = useRef(null)
     const [sendRequest, { isSuccess, isError, error, isLoading }] = useSendLeaveRequestMutation()
     const [Fetchhrstatus, { data }] = useLazyFetchRequestStatusQuery()

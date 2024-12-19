@@ -3,7 +3,7 @@ import { useLazyFetchHRQuery } from '../../redux/apis/adminApi'
 import { io } from 'socket.io-client'
 import Notify from 'simple-notify'
 
-const IoServer = io("http://localhost:5000")
+const IoServer = io(import.meta.env.VITE_BACKEND_URL)
 const HRView = () => {
     const [FetchHR, { data, isSuccess, isError, isLoading, error }] = useLazyFetchHRQuery()
     useEffect(() => {

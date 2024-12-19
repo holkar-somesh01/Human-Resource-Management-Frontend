@@ -6,7 +6,7 @@ import * as XLSX from 'xlsx';
 import { io } from 'socket.io-client'
 
 
-const ioserver = io("http://localhost:5000")
+const ioserver = io(import.meta.env.VITE_BACKEND_URL)
 
 const Leaves = () => {
     const [employeeCompo, setEmployeeCompo] = useState(false)

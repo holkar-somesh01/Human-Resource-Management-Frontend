@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useFetchEmployeeRequestQuery, useLazyFetchEmployeeRequestQuery } from '../../redux/apis/employeeApi'
 import { io } from 'socket.io-client'
 import Notify from 'simple-notify'
-const ioserver = io("http://localhost:5000")
+const ioserver = io(import.meta.env.VITE_BACKEND_URL)
 const EmpLeave = () => {
     const [FetchEmployeeLeave, { data, isSuccess, isError, isLoading, error }] = useLazyFetchEmployeeRequestQuery()
     useEffect(() => {
