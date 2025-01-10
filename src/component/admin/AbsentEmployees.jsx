@@ -14,10 +14,6 @@ const AbsentEmployees = () => {
             start: date,
         }))
     );
-
-
-
-
     return <>
         <div className='p-4'>
             <h4 className='text-decoration-underline'> Absent Dates</h4>
@@ -26,7 +22,6 @@ const AbsentEmployees = () => {
         <div className='container'>
             <div className='row'>
                 <div class="card">
-                    {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
                     <div class="card-body">
                         <FullCalendar
                             plugins={[dayGridPlugin]}
@@ -39,13 +34,9 @@ const AbsentEmployees = () => {
 
                 </div>
             </div>
-
-        </div >
-
+        </div>
     </>
-
 }
-
 const RenderEventContent = (eventinfo) => {
     return <>
         <b>{eventinfo.timeText}</b>

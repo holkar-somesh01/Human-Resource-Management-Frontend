@@ -138,7 +138,6 @@ const Leaves = () => {
                                     </tr>)}
                             <div class="dropdown">
                                 {leaveData && <ul class="dropdown-menu">
-                                    {/* <pre>{JSON.stringify(leaveData, null, 2)}</pre> */}
                                     <li><button
                                         onClick={e => UpdateLeave({ leave: "accept", dayofLeave: leaveData.dayofLeave, _id: leaveData._id })}
                                         type="button"

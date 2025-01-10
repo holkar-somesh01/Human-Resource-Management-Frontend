@@ -18,7 +18,6 @@ const AddHR = () => {
       name: yup.string().required("Name Field Required"),
       email: yup.string().required("Email Field Required"),
       mobile: yup.string().required("Mobile Field Required"),
-      // role: yup.string().required("Role Field Required"),
     }),
     onSubmit: (values, { resetForm }) => {
       RegisterHR(values)
@@ -119,17 +118,6 @@ const AddHR = () => {
                   <div className="valid-feedback">Looks good!</div>
                   <div className="invalid-feedback">{formik.errors.mobile}</div>
                 </div>
-                {/* <div className='my-2'>
-                  <label htmlFor="role">Enter Role</label>
-                  <select
-                    className={`form-select ${formik.touched.role && formik.errors.role ? "is-invalid" : formik.touched.role && !formik.errors.role && "is-valid"}`}
-                    {...formik.getFieldProps("role")}>
-                    <option>Choose Role</option>
-                    <option value="hr">HR</option>
-                  </select>
-                  <div className="valid-feedback">Looks good!</div>
-                  <div className="invalid-feedback">{formik.errors.role}</div>
-                </div> */}
                 {isLoading ? <div className='d-flex justify-content-center align-items-center p-2'>
                   <div class="spinner-border text-primary"></div>
                 </div> : <button type="submit" className="btn btn-info text-white w-100 mt-3">
