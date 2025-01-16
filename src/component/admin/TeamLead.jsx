@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { useFetchTeamLeadsQuery } from '../../redux/apis/hrApi'
+import { useFetchTeamLeadsQuery } from '../../redux/apis/adminApi'
 
 const TeamLead = () => {
     const { admin } = useSelector(state => state.Adminauth)

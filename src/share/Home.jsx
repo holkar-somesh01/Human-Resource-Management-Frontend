@@ -9,7 +9,7 @@ const Home = () => {
             <div className='d-flex justify-content-center align-items-center vh-100 ms-5'>
                 <div className='p-3 '>
                     <h4 style={{ fontFamily: "-moz-initial" }} className=''>We Are Crative</h4>
-                    <h1 className='fs-1'>𝑯𝒖𝒎𝒂𝒏 𝑹𝒆𝒔𝒐𝒖𝒓𝒄𝒆</h1>
+                    <h1 className='fs-1'>𝑯𝒖𝒎𝒂𝒏 𝑹𝒆𝒔𝒐𝒖𝒓𝒄𝒆 𝑴𝒂𝒏𝒂𝒈𝒆𝒎𝒆𝒏𝒕</h1>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, possimus.</p>
                     <div>
                         <div className="row">

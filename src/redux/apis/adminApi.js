@@ -17,6 +17,28 @@ export const adminApi = createApi({
                 providesTags: ["admin"],
                 transformResponse: data => data.result
             }),
+            fetchEmployees: builder.query({
+                query: () => {
+                    return {
+                        url: "/fetch-employee",
+                        method: "GET"
+                    }
+                },
+                providesTags: ["admin"],
+                transformResponse: data => data.result
+
+            }),
+            fetchTeamLeads: builder.query({
+                query: () => {
+                    return {
+                        url: "/fetch-teamlead",
+                        method: "GET"
+                    }
+                },
+                providesTags: ["admin"],
+                transformResponse: data => data.result
+
+            }),
             fetchHRLeave: builder.query({
                 query: () => {
                     return {
@@ -95,6 +117,9 @@ export const adminApi = createApi({
 
 export const {
     useGethandleSearchMutation,
+    useLazyFetchEmployeesQuery,
+    useLazyFetchTeamLeadsQuery,
+    useFetchTeamLeadsQuery,
     useFetchHRLeaveQuery,
     useLazyFetchHRLeaveQuery,
     useLazyFetchHRQuery,

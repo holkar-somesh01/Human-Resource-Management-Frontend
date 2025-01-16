@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { useLazyFetchEmployeesQuery } from '../../redux/apis/hrApi'
 import Notify from 'simple-notify'
+import { useLazyFetchEmployeesQuery } from '../../redux/apis/adminApi'
 
 const Empolyee = () => {
     const { admin } = useSelector(state => state.Adminauth)
@@ -42,22 +42,31 @@ const Empolyee = () => {
                     <div className="container">
                         {isFetching ? <div className=' d-flex justify-content-center align-items-center flex-grow-1'>
                             <div class="spinner-border text-primary"></div>
-                        </div> : <div className="row ">
-                            {data && data.map(item => <div className="col-sm-4 my-2">
-                                <div class="card"><div class="card-body">
-                                    <div className='d-flex gap-3'>
-                                        <img style={{ height: 100, width: 100, borderRadius: 550, objectFit: "cover" }} src="https://images.unsplash.com/photo-1727950183920-654c2feee258?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-                                        <div>
-                                            <h5>{item.name}</h5>
-                                            <span className='fs-6'>{item.department}</span>
-                                            <div className='fs-6'>{item.role}</div>
+                        </div>
+                            : data?.length === 0
+                                ? <div className='d-flex justify-content-center align-items-center p-5'>
+                                    <h1>
+                                        No Employee's Found
+                                    </h1>
+                                </div>
+                                : <div className="row ">
+                                    {data && data.map(item => <div className="col-sm-4 my-2">
+                                        <div class="card"><div class="card-body">
+                                            <div className='d-flex gap-3'>
+                                                <img style={{ height: 100, width: 100, borderRadius: 550, objectFit: "cover" }} src={item.documents.photo} alt={`Profile Photo`} />
+                                                <div>
+                                                    <h5>{item.name}</h5>
+                                                    <span className='fs-6'>{item.department}</span>
+                                                    <div className='fs-6'>{item.role}</div>
+                                                </div>
+                                            </div>
+                                            <button type="button" className="btn w-100 my-2 btn-info">View Details</button>
+                                        </div>
                                         </div>
                                     </div>
-                                    <button type="button" className="btn w-100 my-2 btn-info">View Details</button>
+                                    )}
                                 </div>
-                                </div>
-                            </div>)}
-                        </div>}
+                        }
                     </div>
                 </div>
             </div>
